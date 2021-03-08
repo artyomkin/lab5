@@ -50,6 +50,7 @@ public class Console {
             String[] input = {"",""};
             input = (scanner.nextLine().trim()+" ").split(" ",2);
             input[1] = input[1].trim();
+            if (input[0].isEmpty() && input[1].isEmpty()) continue;
             if (commandManager.executeCommand(input[0],input[1])) System.out.println("Command completed successfully");
             else System.out.println("Execution failed");
         }

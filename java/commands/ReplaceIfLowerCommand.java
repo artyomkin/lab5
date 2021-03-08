@@ -37,6 +37,8 @@ public class ReplaceIfLowerCommand extends AbstractCommand{
             Flat oldFlat = hashMapManager.getElementByKey(key);
             if(oldFlat == null) throw new IncorrectInputException("No flat with such key");
             Flat newFlat = flatAsker.askFlat();
+            if(newFlat == null) return false;
+            newFlat.setId(key);
             if (newFlat.compareTo(oldFlat)<0){
                 return hashMapManager.replace(oldFlat,newFlat);
             } else {

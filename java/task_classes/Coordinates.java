@@ -15,7 +15,7 @@ public class Coordinates {
         x = 0d; y = 0l;
     }
     public Coordinates(Double x, Long y) throws CoordinatesException {
-        if (x < 70 && x != null && y != null) {
+        if (x != null  && x < 70 && y != null) {
             this.x = x; this.y = y;
         } else {
             throw new CoordinatesException("Incorrect coordinates data");

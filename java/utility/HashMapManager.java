@@ -34,6 +34,7 @@ public class HashMapManager {
     public boolean insert(Integer key,Flat flat){
         try{
             if(key==null && flat==null) throw new NullPointerException();
+
             hashMap.put(key,flat);
             updateAfterInsertion();
             return true;
@@ -96,6 +97,7 @@ public class HashMapManager {
             if (it.hasNext()) result += ",";
         }
         result += "]";
+        System.out.println(result);
         try{
             FileOutputStream fout= new FileOutputStream(filePath);
             fout.write(result.getBytes());

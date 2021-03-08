@@ -79,7 +79,6 @@ public class FlatAsker {
      * @return flat
      * **/
     public Flat askFlat(){
-        System.out.println("!!!!!!!!!!!!!!!!!!!!");
         try{
             return new Flat(askName(),askCoordinates(),askArea(),askNumberOfRooms(),askPrice(),askLivingSpace(),askTransport(),askHouse());
         } catch (FlatException e){
@@ -98,9 +97,9 @@ public class FlatAsker {
         while(true){
             try{
                 if(console.isInteractive()){
-                    name = scanner.nextLine();
+                    name = scanner.nextLine().trim();
                 } else {
-                    name = fileReader.readLine();
+                    name = fileReader.readLine().trim();
                 }
                 if (name == null) throw new NullPointerException();
                 exceptionIfEmpty(name);
@@ -130,9 +129,9 @@ public class FlatAsker {
             String rawX;
             try{
                 if(console.isInteractive()){
-                    rawX = scanner.nextLine();
+                    rawX = scanner.nextLine().trim();
                 } else {
-                    rawX = fileReader.readLine();
+                    rawX = fileReader.readLine().trim();
                 }
                 exceptionIfEmpty(rawX);
                 x = Double.parseDouble(rawX);
@@ -167,9 +166,9 @@ public class FlatAsker {
             String rawY;
             try{
                 if (console.isInteractive()){
-                    rawY = scanner.nextLine();
+                    rawY = scanner.nextLine().trim();
                 } else {
-                    rawY = fileReader.readLine();
+                    rawY = fileReader.readLine().trim();
                 }
                 exceptionIfEmpty(rawY);
                 if (rawY == null) throw new NullPointerException();
@@ -200,9 +199,9 @@ public class FlatAsker {
             String rawArea;
             try{
                 if (console.isInteractive()){
-                    rawArea = scanner.nextLine();
+                    rawArea = scanner.nextLine().trim();
                 } else {
-                    rawArea = fileReader.readLine();
+                    rawArea = fileReader.readLine().trim();
                 }
                 exceptionIfEmpty(rawArea);
                 area = Long.parseLong(rawArea);
@@ -254,9 +253,9 @@ public class FlatAsker {
             String rawNumberOfRooms;
             try{
                 if(console.isInteractive()){
-                    rawNumberOfRooms = scanner.nextLine();
+                    rawNumberOfRooms = scanner.nextLine().trim();
                 } else{
-                    rawNumberOfRooms = fileReader.readLine();
+                    rawNumberOfRooms = fileReader.readLine().trim();
                 }
                 exceptionIfEmpty(rawNumberOfRooms);
                 numberOfRooms = Integer.parseInt(rawNumberOfRooms);
@@ -292,9 +291,9 @@ public class FlatAsker {
             try{
                 String rawPrice;
                 if(console.isInteractive()){
-                    rawPrice = scanner.nextLine();
+                    rawPrice = scanner.nextLine().trim();
                 } else {
-                    rawPrice = fileReader.readLine();
+                    rawPrice = fileReader.readLine().trim();
                 }
                 exceptionIfEmpty(rawPrice);
                 price = Double.parseDouble(rawPrice);
@@ -329,9 +328,9 @@ public class FlatAsker {
             try{
                 String rawLivingSpace;
                 if(console.isInteractive()){
-                    rawLivingSpace = scanner.nextLine();
+                    rawLivingSpace = scanner.nextLine().trim();
                 } else {
-                    rawLivingSpace = fileReader.readLine();
+                    rawLivingSpace = fileReader.readLine().trim();
                 }
                 exceptionIfEmpty(rawLivingSpace);
                 livingSpace = Integer.parseInt(rawLivingSpace);
@@ -372,9 +371,9 @@ public class FlatAsker {
             String rawTransport;
             try{
                 if(console.isInteractive()){
-                    rawTransport = scanner.nextLine();
+                    rawTransport = scanner.nextLine().trim();
                 } else {
-                    rawTransport = fileReader.readLine();
+                    rawTransport = fileReader.readLine().trim();
                 }
                 exceptionIfEmpty(rawTransport);
                 transport = Transport.valueOf(rawTransport);
@@ -404,9 +403,9 @@ public class FlatAsker {
             String rawYear;
             try{
                 if(console.isInteractive()){
-                    rawYear = scanner.nextLine();
+                    rawYear = scanner.nextLine().trim();
                 } else {
-                    rawYear = fileReader.readLine();
+                    rawYear = fileReader.readLine().trim();
                 }
                 exceptionIfEmpty(rawYear);
                 year = Integer.parseInt(rawYear);
@@ -441,9 +440,9 @@ public class FlatAsker {
             String rawNumberOfFloors;
             try{
                 if (console.isInteractive()){
-                    rawNumberOfFloors = scanner.nextLine();
+                    rawNumberOfFloors = scanner.nextLine().trim();
                 } else {
-                    rawNumberOfFloors = fileReader.readLine();
+                    rawNumberOfFloors = fileReader.readLine().trim();
                 }
                 exceptionIfEmpty(rawNumberOfFloors);
                 numberOfFloors = Integer.parseInt(rawNumberOfFloors);
@@ -479,9 +478,9 @@ public class FlatAsker {
             String rawNumberOfFlatsOnFloor;
             try{
                 if(console.isInteractive()){
-                    rawNumberOfFlatsOnFloor = scanner.nextLine();
+                    rawNumberOfFlatsOnFloor = scanner.nextLine().trim();
                 } else {
-                    rawNumberOfFlatsOnFloor = fileReader.readLine();
+                    rawNumberOfFlatsOnFloor = fileReader.readLine().trim();
                 }
                 exceptionIfEmpty(rawNumberOfFlatsOnFloor);
                 numberOfFlatsOnFloor = Long.parseLong(rawNumberOfFlatsOnFloor);
@@ -516,9 +515,9 @@ public class FlatAsker {
             String rawNumberOfLifts;
             try{
                 if(console.isInteractive()){
-                    rawNumberOfLifts = scanner.nextLine();
+                    rawNumberOfLifts = scanner.nextLine().trim();
                 } else {
-                    rawNumberOfLifts = fileReader.readLine();
+                    rawNumberOfLifts = fileReader.readLine().trim();
                 }
                 exceptionIfEmpty(rawNumberOfLifts);
                 numberOfLifts = Integer.parseInt(rawNumberOfLifts);

@@ -28,7 +28,15 @@ public class House {
     }
     public House(String name, Integer year, Integer numberOfFloors, long numberOfFlatsOnFloor, Integer numberOfLifts)
             throws HouseException {
-        if (year > 0 && numberOfFloors < 21 && numberOfFloors > 0 && numberOfFlatsOnFloor > 0 && numberOfLifts > 0) {
+        if (
+                numberOfFloors!=null &&
+                        numberOfLifts!=null &&
+                        (year==null | year > 0) &&
+                        numberOfFloors < 21 &&
+                        numberOfFloors > 0 &&
+                        numberOfFlatsOnFloor > 0 &&
+                        numberOfLifts > 0
+        ) {
             this.name = name;
             this.year = year;
             this.numberOfFloors = numberOfFloors;
@@ -84,45 +92,65 @@ public class House {
     /**
      * Sets the number of flats on floor
      * **/
-    public void setNumberOfFlatsOnFloor(long numberOfFlatsOnFloor) {
+    public boolean setNumberOfFlatsOnFloor(long numberOfFlatsOnFloor) {
         try{
             if(numberOfFlatsOnFloor <= MIN_NUMBER_OF_FLATS_ON_FLOOR) throw new HouseException("Number of flats on floor must be more than " + MIN_NUMBER_OF_FLATS_ON_FLOOR);
             this.numberOfFlatsOnFloor = numberOfFlatsOnFloor;
+            return true;
         } catch (HouseException e){
             System.out.println(e.getMessage());
+            return false;
         }
     }
     /**
      * Sets the number of floors
      * **/
-    public void setNumberOfFloors(Integer numberOfFloors) {
+    public boolean setNumberOfFloors(Integer numberOfFloors) {
         try{
+            if (numberOfFloors == null) throw new NullPointerException();
             if (numberOfFloors>MAX_NUMBER_OF_FLOORS) throw new HouseException("Number of floors cannot be more than " + MAX_NUMBER_OF_FLOORS);
             if (numberOfFloors<=MIN_NUMBER_OF_FLOORS) throw new HouseException("Number of floors must be more than " + MIN_NUMBER_OF_FLOORS);
             this.numberOfFloors = numberOfFloors;
+            return true;
         } catch (HouseException e){
             System.out.println(e.getMessage());
+            return false;
+        } catch (NullPointerException e){
+            System.out.println("Incorrect number of floors");
+            return false;
         }
     }
     /**
      * Sets the number of lifts
      * **/
-    public void setNumberOfLifts(Integer numberOfLifts) {
+    public boolean setNumberOfLifts(Integer numberOfLifts) {
         try{
+            if (numberOfLifts == null) throw new NullPointerException();
             if (numberOfLifts<=MIN_NUMBER_OF_LIFTS) throw new HouseException("Number of lifts must be more than " + MIN_NUMBER_OF_LIFTS);
+            return true;
         } catch (HouseException e){
             System.out.println(e.getMessage());
+            return false;
+        } catch (NullPointerException e){
+            System.out.println("Incorrect number of lifts");
+            return false;
         }
     }
     /**
      * Sets the year of house
      * **/
-    public void setYear(Integer year) {
+    public boolean setYear(Integer year) {
         try{
+            if (year == null) throw new NullPointerException();
             if(year <= MIN_YEAR) throw new HouseException("Year must be more than " + MIN_YEAR);
             this.year = year;
+            return true;
         } catch(HouseException e){
             System.out.println(e.getMessage());
+            return false;
+        } catch (NullPointerException e){
+            System.out.println("Incorrect year");
+            return false;
         }
     }
 

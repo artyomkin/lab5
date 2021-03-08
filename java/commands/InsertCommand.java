@@ -29,11 +29,12 @@ public class InsertCommand extends AbstractCommand{
         try{
             if(key.isEmpty()) throw new EmptyStringException("You should specify the key");
             Integer resultKey = Integer.parseInt(key);
+            if(hashMapManager.getHashMap().keySet().contains(resultKey)) throw new KeyAlreadyExistsException("Element with specified key already exists");
             Flat flat = flatAsker.askFlat();
             if(flat == null) throw new NullPointerException();
             hashMapManager.insert(resultKey,flat);
             return true;
-        }catch (EmptyStringException e){
+        }catch (EmptyStringException | KeyAlreadyExistsException e){
             System.out.println(e.getMessage());
             return false;
         }catch (NumberFormatException e){

@@ -25,14 +25,21 @@ public class FilterByTransportCommand extends AbstractCommand{
      * @return exit status of command
      * **/
     @Override
-    public boolean execute(String arg) {
+    public boolean execute(String transportArg) {
+        Transport transport;
         try{
+            if(transportArg == null) throw new NullPointerException();
             if(hashMapManager.getLength() == 0) throw new EmptyCollectionException("Collection is empty");
+            transport = Transport.valueOf(transportArg);
         } catch (EmptyCollectionException e){
             System.out.println(e.getMessage());
             return false;
+        } catch (NullPointerException | IllegalArgumentException e){
+            System.out.println("You should specify the correct transport");
+            return false;
         }
-        Transport transport = flatAsker.askTransport();
+
+
         Iterator it = hashMapManager.getHashMap().entrySet().iterator();
         while (it.hasNext()){
             HashMap.Entry<Integer, Flat> entry = (HashMap.Entry<Integer, Flat>) it.next();

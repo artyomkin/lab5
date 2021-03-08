@@ -60,6 +60,8 @@ public class Flat implements Comparable<Flat>{
                         name != null &&
                         !name.isEmpty() &&
                         coordinates != null &&
+                                numberOfRooms!=null &&
+                                livingSpace!=null&&
                         area > MIN_AREA &&
                         area <= MAX_AREA &&
                         numberOfRooms > MIN_NUMBER_OF_ROOMS &&
@@ -180,6 +182,12 @@ public class Flat implements Comparable<Flat>{
         }
     }
 
+    public boolean setId(int id){
+        this.id = id;
+        if (this.id>idCount){
+                idCount = id;
+        }return true;
+    }
     /**
      * Sets transport
      * @param transport
@@ -257,6 +265,10 @@ public class Flat implements Comparable<Flat>{
      * **/
     public static long getMAX_AREA() {
         return MAX_AREA;
+    }
+
+    public static int getIdCount(){
+        return idCount;
     }
 
     /**
