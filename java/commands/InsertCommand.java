@@ -1,10 +1,7 @@
 package commands;
 
 import exceptions.*;
-import task_classes.Coordinates;
 import task_classes.Flat;
-import task_classes.House;
-import task_classes.Transport;
 import utility.FlatAsker;
 import utility.HashMapManager;
 /**

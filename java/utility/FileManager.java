@@ -13,7 +13,6 @@ import task_classes.House;
 import task_classes.Transport;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;

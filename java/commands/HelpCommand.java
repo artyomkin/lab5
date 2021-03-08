@@ -1,6 +1,5 @@
 package commands;
 
-import exceptions.IncorrectAmountOfArguments;
 /**
  * Prints the information about available commands that command manager contains
  * **/

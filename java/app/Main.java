@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String... args){
-        String filePath = "C:\\Users\\User\\Desktop\\input.json";
+        String filePath = System.getenv("LAB5");
 
         FileManager fileManager = new FileManager(filePath);
         HashMapManager hashMapManager = new HashMapManager(fileManager);

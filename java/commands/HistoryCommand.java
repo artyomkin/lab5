@@ -1,6 +1,5 @@
 package commands;
 
-import utility.CommandManager;
 /**
  * Prints 13 last executed commands
  * **/

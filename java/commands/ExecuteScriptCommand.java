@@ -4,7 +4,6 @@ import utility.Console;
 import utility.FlatAsker;
 
 import java.io.*;
-import java.nio.file.Paths;
 
 /**
  * Execute the script from file

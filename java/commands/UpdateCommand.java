@@ -6,7 +6,6 @@ import task_classes.Flat;
 import utility.FlatAsker;
 import utility.HashMapManager;
 
-import java.util.HashMap;
 /**
  * Updates the element by its key
  * **/

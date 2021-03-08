@@ -97,7 +97,6 @@ public class HashMapManager {
             if (it.hasNext()) result += ",";
         }
         result += "]";
-        System.out.println(result);
         try{
             FileOutputStream fout= new FileOutputStream(filePath);
             fout.write(result.getBytes());

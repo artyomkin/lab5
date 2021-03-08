@@ -86,6 +86,7 @@ public class Console {
             status = previousMode;
             return;
         }
+        status = previousMode;
 
     }
     /**
@@ -99,7 +100,7 @@ public class Console {
      * Prints argument if console mode is interactive
      * **/
     public void println(String s){
-        if(/*status.equals(ConsoleStatus.INTERACTIVE)*/true) System.out.println(s);
+        if(status.equals(ConsoleStatus.INTERACTIVE)) System.out.println(s);
     }
     /**
      * @return true if interactive mode is ective

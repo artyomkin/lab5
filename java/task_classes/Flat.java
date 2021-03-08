@@ -1,5 +1,4 @@
 package task_classes;
-import exceptions.CoordinatesException;
 import exceptions.EmptyStringException;
 import exceptions.FlatException;
 import utility.RandomStr;
@@ -8,7 +7,6 @@ import java.time.LocalDate;
 import java.lang.Comparable;
 import java.util.Objects;
 import java.util.Random;
-import java.util.regex.Pattern;
 
 /**
  * Objects of this class are stored in collection

@@ -7,10 +7,8 @@ import task_classes.House;
 import task_classes.Transport;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
-import java.util.regex.Pattern;
 
 /**
  * Gets all information about flat or its components from user
@@ -115,7 +113,6 @@ public class FlatAsker {
             }
 
         }
-        System.out.println(name);
         return name;
     }
     /**
@@ -151,7 +148,6 @@ public class FlatAsker {
                 return null;
             }
         }
-        System.out.println(x);
 
         return x;
     }
@@ -184,7 +180,6 @@ public class FlatAsker {
                 return null;
             }
         }
-        System.out.println(y);
 
         return y;
     }
@@ -222,7 +217,6 @@ public class FlatAsker {
                 return MIN_AREA-1;
             }
         }
-        System.out.println(area);
 
         return area;
     }
@@ -276,7 +270,6 @@ public class FlatAsker {
                 return null;
             }
         }
-        System.out.println(numberOfRooms);
 
         return numberOfRooms;
     }
@@ -313,7 +306,6 @@ public class FlatAsker {
                 return MIN_PRICE-1;
             }
         }
-        System.out.println(price);
 
         return price;
     }
@@ -350,7 +342,6 @@ public class FlatAsker {
                 return null;
             }
         }
-        System.out.println(livingSpace);
 
         return livingSpace;
     }
@@ -388,7 +379,6 @@ public class FlatAsker {
                 return null;
             }
         }
-        System.out.println(transport);
 
         return transport;
     }
@@ -425,7 +415,6 @@ public class FlatAsker {
                 return null;
             }
         }
-        System.out.println(year);
 
         return year;
     }
@@ -463,7 +452,6 @@ public class FlatAsker {
                 return null;
             }
         }
-        System.out.println(numberOfFloors);
 
         return numberOfFloors;
     }
@@ -500,7 +488,6 @@ public class FlatAsker {
                 return MIN_NUMBER_OF_FLATS_ON_FLOOR-1;
             }
         }
-        System.out.println(numberOfFlatsOnFloor);
 
         return numberOfFlatsOnFloor;
     }
@@ -536,7 +523,6 @@ public class FlatAsker {
                 return null;
             }
         }
-        System.out.println(numberOfLifts);
 
         return numberOfLifts;
     }
