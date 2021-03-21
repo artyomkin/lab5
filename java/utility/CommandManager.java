@@ -2,6 +2,7 @@ package utility;
 
 import commands.Executable;
 import exceptions.NoSuchCommandException;
+import exceptions.RecursionException;
 
 import java.util.*;
 
@@ -11,10 +12,12 @@ import java.util.*;
 public class CommandManager {
     private HashMap<String, Executable> commands = new HashMap<String,Executable>();
     private ArrayDeque<Executable> history = new ArrayDeque<Executable>(13);
+    private Stack<String> scriptStack;
     public CommandManager(Executable... commands){
         for (Executable c : commands){
             this.commands.put(c.getName(), c);
         }
+        scriptStack = new Stack<>();
     }
     /**
      * Add new command to command manager
@@ -46,6 +49,18 @@ public class CommandManager {
             switch(command){
                 case "help": return help();
                 case "history": return history();
+                case "execute_script": {
+                    for (String currentFile : scriptStack){
+                        if (currentFile.equals(key)){
+                            System.out.println("Recursion");
+                            return false;
+                        }
+                    }
+                    scriptStack.addElement(key);
+                    boolean exitStatus = commands.get(command).execute(key);
+                    scriptStack.pop();
+                    return exitStatus;
+                }
                 default: return commands.get(command).execute(key);
             }
         } else{

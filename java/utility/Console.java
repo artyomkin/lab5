@@ -1,10 +1,12 @@
 package utility;
 
 import exceptions.NoCommandManagerFoundException;
+import exceptions.RecursionException;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.Stack;
 
 /**
  * Controles the modes of input and processes user's input
@@ -70,6 +72,7 @@ public class Console {
             System.out.println(e.getMessage());
             return;
         }
+
         status = ConsoleStatus.SCRIPT;
         String rawInput;
         try{
